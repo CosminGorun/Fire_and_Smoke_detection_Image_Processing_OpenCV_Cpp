@@ -1,6 +1,7 @@
 #pragma once
 #include <opencv2/core/matx.hpp>
-#define WIDHT 500
+#include "common.h"
+#define WIDHT 450
 
-Mat_<Vec3b> makeViewLine(vector<Mat_<Vec3b>> vec, string name);
-Mat_<uchar> makeViewLine(vector<Mat_<uchar>> vec, string name);
+Mat_<Vec3b> makeViewLine(string name,vector<Mat_<Vec3b>> vec);
+Mat_<uchar> makeViewLine(string name,vector<Mat_<uchar>> vec);

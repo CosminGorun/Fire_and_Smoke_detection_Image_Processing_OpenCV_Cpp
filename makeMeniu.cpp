@@ -1,6 +1,6 @@
 //#include "myHeader.h"
 #include "stdafx.h"
-#include "common.h"
+//#include "common.h"
 #include "makeMeniu.h"
 
 Mat_<UC> make_meniu() {

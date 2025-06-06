@@ -1,4 +1,7 @@
 #pragma once
+#include "stdafx.h"
+#include "common.h"
+#include "makeMeniu.h"
 #define V3 Vec3b
 #define UC uchar
 #define DIRECTOR "./ImagesBMP"

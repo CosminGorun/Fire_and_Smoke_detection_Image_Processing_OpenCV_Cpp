@@ -1,10 +1,11 @@
-#include "stdafx.h"
+﻿#include "stdafx.h"
 #include "common.h"
 #include <opencv2/core/utils/logger.hpp>
 #include "makeMeniu.h"
 #include "makeViews.h"
 #include "detectFire.h"
 #include "procesing.h"
+#include "detectSmoke.h"
 
 using namespace std;
 wchar_t* projectpath;
@@ -38,13 +39,11 @@ void myhandler(int event, int x, int y, int flags, void* param) {
 	}
 }
 
+
+
 void prelucrare(Mat_<V3> img) {
-	auto met1 = detectFireCanal(img);
-	auto met2 = detectFire(img);
-	makeViewLine(getCanals(img), "canale");
-	//makeViewLine(met1,"fireRGB");
-	//makeViewLine(met2,"fireHSV");
-	//auto overlay = overlayMask(met1[2], met2[2]);
-	//vector<Mat_<V3>> a = {img,met1[2], met2[2],overlay};
-	//makeViewLine(a, "combinate");
+	
+	
+	makeViewLine("detect", dilateAndDetect(img));
+	
 }

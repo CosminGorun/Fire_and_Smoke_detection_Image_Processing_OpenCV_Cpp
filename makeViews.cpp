@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "common.h"
+//#include "common.h"
 #include "makeMeniu.h"
 #include "makeViews.h"
 
@@ -15,7 +15,7 @@ Mat_<Vec3b> resizeImage(Mat_<Vec3b> img) {
 	resize(img, resImg, size);
 	return resImg;
 }
-Mat_<Vec3b> makeViewLine(vector<Mat_<Vec3b>> vec, string name) {
+Mat_<Vec3b> makeViewLine(string name,vector<Mat_<Vec3b>> vec) {
 	Mat_<Vec3b> concat= resizeImage(vec[0]);
 	for (int i = 1; i < vec.size(); i++) {
 		hconcat(concat, resizeImage(vec[i]), concat);
@@ -31,7 +31,7 @@ Mat_<uchar> resizeImage(Mat_<uchar> img) {
 	resize(img, resImg, size);
 	return resImg;
 }
-Mat_<uchar> makeViewLine(vector<Mat_<uchar>> vec,string name) {
+Mat_<uchar> makeViewLine(string name,vector<Mat_<uchar>> vec) {
 	Mat_<uchar> concat = resizeImage(vec[0]);
 	for (int i = 1; i < vec.size(); i++) {
 		hconcat(concat, resizeImage(vec[i]), concat);

@@ -1,9 +1,13 @@
 #pragma once
 #include "makeMeniu.h"
+#include "stdafx.h"
+#include "common.h"
+#include "makeMeniu.h"
+#include "procesing.h"
 #include <opencv2/core/matx.hpp>
 
-boolean isFirePixel(Vec3b pixel);
 
-vector<Mat_<V3>> detectFire(Mat_<V3> img);
-
-vector<Mat_<V3>> detectFireCanal(Mat_<V3> img);
+Mat_<UC> detectFireHSV(Mat_<V3> img);
+Mat_<UC> detectFireYCrCB(Mat_<V3> img);
+Mat_<UC> detectFireRGB(Mat_<V3> img);
+vector<Mat_<V3>> dilateAndDetect(Mat_<V3> img);
